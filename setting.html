@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Settings</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="fontawesome-free-7.2.0-web/css/all.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+    <div class="container">
+        <!--------------------- navigation ----------------------->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fab fa-apple"></i>
+                        </span>
+                        <span class="title">Brand Name </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customer.html">
+                        <span class="icon">
+                            <i class="fas fa-users"></i>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="message.html">
+                        <span class="icon">
+                            <i class="far fa-comment-alt"></i>
+                        </span>
+                        <span class="title">Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html">
+                        <span class="icon">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon">
+                            <i class="fas fa-cog"></i>
+                        </span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#logoutModal" data-modal="logoutModal">
+                        <span class="icon">
+                            <i class="fas fa-sign-out"></i>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!------------------- Main -------------- -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-toggle-on"></i>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search settings...">
+                        <i class="fas fa-search"></i>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/1.png" alt="">
+                </div>
+            </div>
+
+            <!------------------ Settings Layout ---------------------- -->
+
+            <div class="settingsContainer">
+
+                <!-- بخش ویرایش پروفایل کاربری -->
+                <div class="settingsCard">
+                    <h2><i class="fas fa-user-cog"></i> Profile Settings</h2>
+                    <form class="settingsForm" id="profileSettingsForm">
+                        <div class="imageUpload">
+                            <div class="imagePreview">
+                                <!-- آیدی برای تغییر آنی تصویر پروفایل -->
+                                <img src="assets/1.png" id="profileimagePreview" alt="Profile Preview">
+                            </div>
+                            <div class="uploadBtn">
+                                <label for="imageFile"><i class="fas fa-camera"></i> Change Photo</label>
+                                <input type="file" id="imageFile" accept="image/*">
+                            </div>
+                        </div>
+
+                        <div class="formGrid">
+                            <div class="inputGroup">
+                                <label>First Name</label>
+                                <input type="text" id="profFirstName" value="Ali">
+                            </div>
+                            <div class="inputGroup">
+                                <label>Last Name</label>
+                                <input type="text" id="profLastName" value="Rezaei">
+                            </div>
+                            <div class="inputGroup">
+                                <label>Email Address</label>
+                                <input type="email" id="profEmail" value="ali@example.com">
+                            </div>
+                            <div class="inputGroup">
+                                <label>Phone Number</label>
+                                <input type="text" id="profPhone" value="+1 234 567 890">
+                            </div>
+                        </div>
+                        <button type="submit" class="saveBtn">Save Changes</button>
+                    </form>
+                </div>
+
+                <!-- بخش تنظیمات سیستم و اعلان‌ها -->
+                <div class="settingsCard">
+                    <h2><i class="fas fa-bell"></i> Notifications & System</h2>
+                    <div class="systemOptions">
+                        <div class="optionItem">
+                            <div class="optionText">
+                                <h4>Email Notifications</h4>
+                                <p>Receive daily order reports and new customer sign-up alerts via email.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="sysEmailNotif" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="optionItem">
+                            <div class="optionText">
+                                <h4>Maintenance Mode</h4>
+                                <p>Turn off the public website access for standard customers during updates.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="sysMaintMode">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بخش تغییر رمز عبور (Password Settings) -->
+                <div class="settingsCard">
+                    <h2><i class="fas fa-lock"></i> Change Password</h2>
+                    <form class="settingsForm" id="passwordSettingsForm">
+                        <div class="passwordFormColumn" style="display: flex; flex-direction: column; gap: 15px;">
+
+                            <div class="inputGroup">
+                                <label>Current Password</label>
+                                <div class="passwordWrapper"
+                                    style="position: relative; display: flex; align-items: center;">
+                                    <input type="password" id="currentPassword" placeholder="Enter current password"
+                                        style="width: 100%; padding-right: 35px;">
+                                    <i class="fas fa-eye togglePassword"
+                                        style="position: absolute; right: 10px; cursor: pointer;"></i>
+                                </div>
+                            </div>
+
+                            <div class="inputGroup">
+                                <label>New Password</label>
+                                <div class="passwordWrapper"
+                                    style="position: relative; display: flex; align-items: center;">
+                                    <input type="password" id="newPassword" placeholder="Enter new password"
+                                        style="width: 100%; padding-right: 35px;">
+                                    <i class="fas fa-eye togglePassword"
+                                        style="position: absolute; right: 10px; cursor: pointer;"></i>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="saveBtn" style="margin-top: 10px;">Update Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>Sign Out</h3>
+            <p>Are you sure you want to log out of the admin panel?</p>
+            <div class="modal-buttons">
+                <a href="index.html" class="modal-btn confirm-btn">Yes, Log out</a>
+                <button id="closeModal" class="modal-btn cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <!-- js script -->
+    <script src="app.js?v=2"></script>
+</body>
+
+</html>

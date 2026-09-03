@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Help & Support</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="fontawesome-free-7.2.0-web/css/all.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+    <div class="container">
+        <!--------------------- navigation ----------------------->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fab fa-apple"></i>
+                        </span>
+                        <span class="title">Brand Name </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customer.html">
+                        <span class="icon">
+                            <i class="fas fa-users"></i>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="message.html">
+                        <span class="icon">
+                            <i class="far fa-comment-alt"></i>
+                        </span>
+                        <span class="title">Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html">
+                        <span class="icon">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon">
+                            <i class="fas fa-cog"></i>
+                        </span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#logoutModal" data-modal="logoutModal">
+                        <span class="icon">
+                            <i class="fas fa-sign-out"></i>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!------------------- Main -------------- -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-toggle-on"></i>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search help topics...">
+                        <i class="fas fa-search"></i>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/1.png" alt="">
+                </div>
+            </div>
+
+            <!------------------ Help Center Layout ---------------------- -->
+            <div class="helpContainer">
+
+                <!-- بخش کارت‌های پشتیبانی سریع -->
+                <div class="helpCards">
+                    <div class="hCard">
+                        <div class="hIcon"><i class="fas fa-book"></i></div>
+                        <h3>Documentation</h3>
+                        <p>Learn how to manage products, orders, and users efficiently.</p>
+                        <a href="#" class="hBtn">Read Docs</a>
+                    </div>
+                    <div class="hCard">
+                        <div class="hIcon"><i class="fas fa-headset"></i></div>
+                        <h3>Contact Support</h3>
+                        <p>Get in touch with our technical team for immediate assistance.</p>
+                        <a href="#" class="hBtn">Open Ticket</a>
+                    </div>
+                    <div class="hCard">
+                        <div class="hIcon"><i class="fas fa-bug"></i></div>
+                        <h3>Report a Bug</h3>
+                        <p>Found an issue in the panel? Let us know so we can fix it quickly.</p>
+                        <a href="#" class="hBtn">Report</a>
+                    </div>
+                    <!-- کارت جدید: چاپ گزارشات سیستم -->
+                    <div class="hCard">
+                        <div class="hIcon"><i class="fas fa-print"></i></div>
+                        <h3>Print Reports</h3>
+                        <p>Print or save a complete PDF report of all system logs and active summary tables.</p>
+                        <a href="#" class="hBtn">Print All</a>
+                    </div>
+
+                </div>
+
+                <!-- بخش سوالات متداول (FAQ) -->
+                <div class="faqSection">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faqItem">
+                        <div class="faqQuestion">
+                            <h4>How can I change my password?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faqAnswer">
+                            <p>Go to the "Password" tab from the sidebar menu, enter your current password, and type
+                                your new secure password.</p>
+                        </div>
+                    </div>
+
+                    <div class="faqItem activeFaq">
+                        <div class="faqQuestion">
+                            <h4>How to export customer reports?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faqAnswer">
+                            <p>Navigate to the "Customers" page, apply your desired filters, and click on the "View All"
+                                or export button near the table header to download data.</p>
+                        </div>
+                    </div>
+
+                    <div class="faqItem">
+                        <div class="faqQuestion">
+                            <h4>Is this admin panel fully mobile friendly?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faqAnswer">
+                            <p>Yes! Every single grid, card, sidebar navigation, and datatable has been carefully
+                                structured to adapt smoothly on smartphone viewports.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>Sign Out</h3>
+            <p>Are you sure you want to log out of the admin panel?</p>
+            <div class="modal-buttons">
+                <a href="index.html" class="modal-btn confirm-btn">Yes, Log out</a>
+                <button id="closeModal" class="modal-btn cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <!-- js script -->
+    <script src="app.js?v=2"></script>
+</body>
+
+</html>

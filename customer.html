@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Customers</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="fontawesome-free-7.2.0-web/css/all.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css?v=4">
+    <!-- SweetAlert2 CSS & JS -->
+
+</head>
+
+<body>
+    <div class="container">
+        <!--------------------- navigation ----------------------->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fab fa-apple"></i></span>
+                        <span class="title">Brand Name</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="customer.html">
+                        <span class="icon"><i class="fas fa-users"></i></span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="message.html">
+                        <span class="icon"><i class="far fa-comment-alt"></i></span>
+                        <span class="title">Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html">
+                        <span class="icon"><i class="fas fa-question"></i></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon"><i class="fas fa-lock"></i></span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#logoutModal" data-modal="logoutModal">
+                        <span class="icon"><i class="fas fa-sign-out"></i></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!------------------- Main -------------- -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-toggle-on"></i>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search customers...">
+                        <i class="fas fa-search"></i>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/1.png" alt="">
+                </div>
+            </div>
+
+            <!--------------------- cardBox ----------------------------->
+            <div class="cardBox">
+                <div class="cards">
+                    <div>
+                        <div class="numbers">2,450</div>
+                        <div class="cardName">Total Customers</div>
+                    </div>
+                    <div class="iconBox"><i class="fas fa-users"></i></div>
+                </div>
+                <div class="cards">
+                    <div>
+                        <div class="numbers">1,820</div>
+                        <div class="cardName">Active Now</div>
+                    </div>
+                    <div class="iconBox"><i class="fas fa-user-check"></i></div>
+                </div>
+                <div class="cards">
+                    <div>
+                        <div class="numbers">45</div>
+                        <div class="cardName">New This Week</div>
+                    </div>
+                    <div class="iconBox"><i class="fas fa-user-plus"></i></div>
+                </div>
+                <div class="cards">
+                    <div>
+                        <div class="numbers">$48,500</div>
+                        <div class="cardName">Customer LTV</div>
+                    </div>
+                    <div class="iconBox"><i class="fas fa-wallet"></i></div>
+                </div>
+            </div>
+
+
+            <!------------------ Customers List ---------------------- -->
+            <div class="ditails" style="grid-template-columns: 1fr;">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Manage Customers</h2>
+                        <!-- بخش فیلتر و دکمه جدید -->
+                        <div class="headerActions">
+                            <div class="filterBox">
+                                <select>
+                                    <option value="">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="banned">Banned</option>
+                                </select>
+                            </div>
+                            <a href="#" class="btn">+ Add Customer</a>
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Customer</td>
+                                <td>Email</td>
+                                <td>Total Spent</td>
+                                <td>Status</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody id="customerTableBody">
+                            <!-- <tr>
+                                <td style="display: flex; align-items: center; gap: 10px;">
+                                    <div class="recentCustomers" style="min-height:auto; padding:0; box-shadow:none;">
+                                        <div class="imgBox"><img src="assets/1.png" alt=""></div>
+                                    </div>
+                                    <h4>Ali Rezaei</h4>
+                                </td>
+                                <td>ali@example.com</td>
+                                <td>$1,200</td>
+                                <td><span class="status delivered">Active</span></td>
+                                <td>
+                                    <div class="actionButtons">
+                                        <a href="#" class="editBtn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="deleteBtn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; align-items: center; gap: 10px;">
+                                    <div class="recentCustomers" style="min-height:auto; padding:0; box-shadow:none;">
+                                        <div class="imgBox"><img src="assets/6.png" alt=""></div>
+                                    </div>
+                                    <h4>Sara Ahmadi</h4>
+                                </td>
+                                <td>sara@example.com</td>
+                                <td>$850</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <div class="actionButtons">
+                                        <a href="#" class="editBtn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="deleteBtn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; align-items: center; gap: 10px;">
+                                    <div class="recentCustomers" style="min-height:auto; padding:0; box-shadow:none;">
+                                        <div class="imgBox"><img src="assets/6.png" alt=""></div>
+                                    </div>
+                                    <h4>John Doe</h4>
+                                </td>
+                                <td>john@example.com</td>
+                                <td>$0</td>
+                                <td><span class="status return">Banned</span></td>
+                                <td>
+                                    <div class="actionButtons">
+                                        <a href="#" class="editBtn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="deleteBtn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- پاپ آپ تایید خروج -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>Sign Out</h3>
+            <p>Are you sure you want to log out of the admin panel?</p>
+            <div class="modal-buttons">
+                <a href="index.html" class="modal-btn confirm-btn">Yes, Log out</a>
+                <button id="closeModal" class="modal-btn cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- customerModal -->
+    <div id="customerModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 500px;">
+            <h3 id="modalTitle">Add New Customer</h3>
+
+            <form id="customerForm">
+                <!-- فیلد نام مشتری -->
+                <div class="form-group" style="margin-top: 15px; display: flex; flex-direction: column; gap: 5px;">
+                    <label for="cName" style="font-weight: 600; color: var(--black2); text-align: left;">
+                        Customer Name
+                    </label>
+                    <input type="text" id="cName" placeholder="Enter name" required
+                        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none;">
+                </div>
+
+                <!-- فیلد ایمیل -->
+                <div class="form-group" style="margin-top: 15px; display: flex; flex-direction: column; gap: 5px;">
+                    <label for="cEmail" style="font-weight: 600; color: var(--black2); text-align: left;">
+                        Email Address
+                    </label>
+                    <input type="email" id="cEmail" placeholder="Enter email" required
+                        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none;">
+                </div>
+
+                <!-- فیلد میازن خرید اولیه (اختیاری برای افزودن) -->
+                <div class="form-group" style="margin-top: 15px; display: flex; flex-direction: column; gap: 5px;">
+                    <label for="cSpent" style="font-weight: 600; color: var(--black2); text-align: left;">
+                        Total Spent
+                    </label>
+                    <input type="text" id="cSpent" placeholder="e.g. $1,200" value="$0"
+                        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none;">
+                </div>
+
+                <!-- فیلد انتخاب وضعیت -->
+                <div class="form-group" style="margin-top: 15px; display: flex; flex-direction: column; gap: 5px;">
+                    <label for="cStatus" style="font-weight: 600; color: var(--black2); text-align: left;">
+                        Status
+                    </label>
+                    <select id="cStatus"
+                        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; background: #fff;">
+                        <option value="Active">Active</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Banned">Banned</option>
+                    </select>
+                </div>
+
+                <!-- فیلد آپلود تصویر مشتری -->
+                <div class="form-group" style="margin-top: 15px; display: flex; flex-direction: column; gap: 5px;">
+                    <label for="cImage" style="font-weight: 600; color: var(--black1);">Customer Avatar</label>
+                    <input type="file" id="cImage" accept="image/*"
+                        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; background: #fff; cursor: pointer;">
+                </div>
+
+                <!-- دکمه‌های عملیاتی فرم -->
+                <div class="modal-buttons"
+                    style="margin-top: 25px; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" id="closeCustomerModal" class="modal-btn cancel-btn"
+                        style="background: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                        Cancel
+                    </button>
+                    <button type="submit" class="modal-btn confirm-btn"
+                        style="background: var(--NavColor, #2a2185); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                        Save Customer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- SweetAlert2 Offline from node_modules -->
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <!-- js script -->
+    <script src="app.js?v=2"></script>
+</body>
+
+</html>
