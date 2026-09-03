@@ -1,13 +1,10 @@
 // ==================== بخش لاگین: سیستم امنیت و احراز هویت ادمین ====================
 
 // ۱. تعریف فایلهایی که برای ورود به آنها نیاز به لاگین نیست
-const currentPage = window.location.pathname.split("/").pop();
+const currentPage = window.location.pathname.split("/").pop() || 'index.html';
 
-// ۲. بررسی وضعیت لاگین بودن ادمین (Route Protection)
-if (currentPage !== 'login.html' && currentPage !== '') {
-    // اگر در صفحات پنل بود و در حافظه مرورگر علامت لاگین ثبت نشده بود
+if (currentPage !== 'login.html') {
     if (!sessionStorage.getItem('isAdminLoggedIn')) {
-        // هدایت مستقیم کاربر به صفحه لاگین
         window.location.href = 'login.html';
     }
 }
