@@ -26,7 +26,7 @@ if (loginForm) {
             localStorage.removeItem('adminPanelSettings');
         }
 
-        const correctEmail = (savedSettings.profEmail || " ").trim().toLowerCase();
+        const correctEmail = (savedSettings.profEmail || "shabir@gmail.com").trim().toLowerCase();
         const correctPassword = savedSettings.password || "123";
 
         // الف) بررسی صحت ایمیل و رمز عبور
