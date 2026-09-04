@@ -1722,6 +1722,120 @@ input:checked+.slider:before {
     animation-delay: .4s;
 }
 
+/* ==================== Mobile layout fixes ==================== */
+@media (max-width: 768px) {
+    .topbar {
+        gap: 8px;
+        padding: 0 8px;
+    }
+
+    .toggle,
+    .user {
+        flex-shrink: 0;
+    }
+
+    .search {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+        margin: 0;
+    }
+
+    .messageContainer {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: 220px minmax(0, 1fr);
+        height: calc(100vh - 80px);
+        min-height: 520px;
+        border-radius: 0;
+    }
+
+    .messageSidebar,
+    .messageBox {
+        min-width: 0;
+        min-height: 0;
+    }
+
+    .messageSidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .messageBody {
+        min-height: 0;
+    }
+
+    .msg {
+        max-width: 85%;
+    }
+
+    .settingsContainer {
+        padding: 12px;
+        gap: 16px;
+    }
+
+    .settingsCard {
+        min-width: 0;
+        padding: 20px 15px;
+    }
+
+    .imageUpload {
+        flex-wrap: wrap;
+    }
+
+    .formGrid,
+    .inputGroup,
+    .inputGroup input,
+    .passwordFormColumn {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .formGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .optionItem {
+        align-items: flex-start;
+    }
+
+    .optionText {
+        min-width: 0;
+    }
+
+    .optionText p {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 480px) {
+    .user {
+        width: 46px;
+        height: 46px;
+    }
+
+    .toggle {
+        width: 48px;
+        height: 60px;
+    }
+
+    .messageContainer {
+        grid-template-rows: 190px minmax(0, 1fr);
+        min-height: 500px;
+    }
+
+    .messageSidebar,
+    .messageHeader,
+    .messageBody,
+    .messageFooter {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .messageFooter {
+        gap: 8px;
+    }
+}
+
 @keyframes blink {
 
     0%,
