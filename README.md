@@ -487,13 +487,13 @@ Both libraries are included locally so the project can operate without an intern
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+ https://devshabir.github.io/Modern-Admin-Panel/
 ```
 
 ## 2. Open the Project
 
 ```bash
-cd YOUR-REPOSITORY
+cd Moder-Admin-Panel
 ```
 
 ## 3. Install Dependencies
