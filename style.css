@@ -1027,16 +1027,16 @@ body {
 }
 
 .actionButtons .editBtn:hover {
-    color: #d0e0e9;
+    color: #1a3493;
 }
 
 .actionButtons .deleteBtn {
-    color: #b81c1c;
+    color: #e33e3e;
 }
 
 .actionButtons .deleteBtn:hover {
-    color: #f47f87;
-}
+    color: #c30d19;
+}~
 
 /* ====================================== Message Page Styles =================================== */
 .messageContainer {
