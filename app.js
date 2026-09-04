@@ -26,7 +26,7 @@ if (loginForm) {
             localStorage.removeItem('adminPanelSettings');
         }
 
-        const correctEmail = (savedSettings.profEmail || "ali@example.com").trim().toLowerCase();
+        const correctEmail = (savedSettings.profEmail || " ").trim().toLowerCase();
         const correctPassword = savedSettings.password || "123";
 
         // الف) بررسی صحت ایمیل و رمز عبور
@@ -164,37 +164,8 @@ const ordersData = [
     { name: "Dell Laptop", price: "$560", payment: "Due", status: "Pending" }
 ];
 
+
 const ordersTableBody = document.getElementById('ordersTableBody');
-
-// ۲. تابع اختصاصی رندر جدول سفارشات داشبورد
-// function renderOrdersTable(dataToRender = ordersData) {
-//     if (!ordersTableBody) return; // اگر در صفحه‌ای غیر از داشبورد باشیم، این تابع متوقف می‌شود
-
-//     ordersTableBody.innerHTML = ''; // پاک کردن محتوای استاتیک قدیمی
-
-//     if (dataToRender.length === 0) {
-//         ordersTableBody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 20px;">No orders found.</td></tr>';
-//         return;
-//     }
-
-//     dataToRender.forEach(order => {
-//         const row = document.createElement('tr');
-
-//         // استانداردسازی متن وضعیت برای ست شدن دقیق با کلاس‌های CSS شما
-//         const statusClass = String(order.status).trim().toLowerCase();
-
-//         row.innerHTML = `
-//             <td>${order.name}</td>
-//             <td>${order.price}</td>
-//             <td>${order.payment}</td>
-//             <td>
-//                 <span class="status ${statusClass}">${order.status}</span>
-//             </td>
-//         `;
-
-//         ordersTableBody.appendChild(row);
-//     });
-// }
 
 // ۲. تابع اختصاصی رندر جدول سفارشات داشبورد (نسخه ارتقا یافته با تغییر وضعیت و دکمه اکشن)
 function renderOrdersTable(dataToRender = ordersData) {

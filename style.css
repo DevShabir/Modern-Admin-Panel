@@ -185,7 +185,8 @@ body {
     position: fixed;
     width: 300px;
     height: 100%;
-    background: var(--NavColor);
+    background-color: var(--NavColor);
+    background-image: none;
     border-left: 10px solid var(--NavColor);
     box-shadow: 8px 0 24px rgba(21, 45, 29, 0.08);
     transition: width 0.5s ease, left 0.5s ease;
@@ -222,12 +223,13 @@ body {
     list-style-type: none;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .navigation ul li:hover,
 .navigation ul li.hovered {
-    background: var(--white);
+    background-color: var(--white);
+    background-image: none;
 }
 
 .navigation ul li:nth-child(1) {
