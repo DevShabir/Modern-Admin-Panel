@@ -12,6 +12,9 @@ This project is designed as a professional administrative dashboard with authent
 
 ---
 
+live Demo -----
+https://devshabir.github.io/Modern-Admin-Panel/
+
 ## 📸 Overview
 
 This Admin Panel provides a complete administrative interface with multiple interconnected pages and dynamic data management.
